@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+        img{
+            height: 200px;
+            width: 200px;
+            border: 2px solid #000;
+        }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>PORTIFÓLIO - MARIO CABRAL</title>
+</head>
+<body>
+    <style>
+        .labs{
+            display: inline-block;
+            width: 100px;
+        }
+    </style>
+    <section class="main"  id="home">
+        <!--CABEÇALHO-->
+        <header>
+                        <!--LOGO-->
+            <a><img src="logo.png" class="logo"></a>
+                        <!--FIM DO LOGO-->
+            <div class="toggle"></div>
+                        <!--MENU-->
+            <ul class="menu">
+
+                <li><a href="#home" class="home_menu">Home</a></li>
+                <li><a href="#servico" class="servico_menu">Serviços</a></li>
+                <li><a href="#contato" class="contato_menu">Contato</a></li>
+
+            </ul>
+        <!--MENU-->
+        </header>
+
+        <!--FIM DO CABEÇALHO-->
+
+    <!--INICIO DA HOME-->
+<div id="registro" style="display:contents;">
+    <div class="content">
+
+        <!--TEXTO DA HOME-->  
+
+        <center>
+            <fieldset>
+                <br><br><div class="inicio">
+                    <center><h1>Enviar Certificado</h1></center>
+                 </div><br>
+                 <table>
+                    <tr>
+                        <td><label for="nome_do_curso" class="label_imput">Nome do curso:</label></td>
+                        <td><label for="instituicao" class="label_input">Instituição:</label></td>
+                        <td><label for="nivel" class="label_input">Nivel:</label></td>
+                        <td><label for="ano_conclusao" class="label_input">Ano da Conclusão:</label></td>
+                        <td><label for="link_img" class="label_imput">link_img</label></td>
+                        <td><label for="link_pdf" class="label_imput">link_pdf:</label></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Digite o Nome do curso" type="text" name="nome" id="nome_curso"></td>
+                        <td> 
+                            <select name="nivel" id="nivel">
+                            <option value=" "> </option>
+                            <option value="Técnico">Técnico</option>
+                            <option value="Complementar">Complementar</option>
+                            <option value="Bacharelado">Bacharelado</option>
+                            </select>
+                        </td>
+                        <td><input placeholder="Digite o Nome da Instituição" type="text" name="nome" id="nome_curso">
+                        </td>
+                        <td>
+                            <select name="estoque" id="estoque">
+                                <option value=" "> </option>
+                                <option value="disponivel">DISPONIVEL</option>
+                                <option value="não disponivel">NÃO DISPONIVEL</option>
+                            </select>
+                        </td>
+                        <td><input placeholder="Digite a Quantidade" type="number" name="qtd" id="qtd"></td>
+                        <td><input placeholder="Digite o valor" type="number" name="valor" id="valor"></td>
+                    </tr>
+                </table>
+                </div><br>
+                <div class="input"><br>
+                    <label>imagem name</label> <input type="text" id="namebox"><label id="extlab"></label><br><br>
+                    <img id="myimg" style="display: none;"> <label id="upprogress"></label><br><br>
+                </div><br>
+                <ul class="menu">
+                    <li><button id="selbtn">Selecionar imagem</button></li>
+                    <li><button id="btn">Enviar</button></li>
+                </ul>
+            </fieldset>
+ </center>
+   
+    <!--FIM DA HOME--> 
+
+    </section></div>
+     
+    </div>
+<div id="del" style="display: contents;">
+    <div class="textoequipe" style="padding-top: 2%;">
+        <h1>Buscar, Deletar e Alterar Arquivo</h1>
+    </div>
+    <div class="input-group mb-3">
+        <input id="SearchBar" type="text" class="form-control" placeholder="Buscar" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <select class="custom-select" id="Categoria">
+                <option selected>Nome</option>
+                <option value="1">Estoque</option>
+                <option value="2">Tipo</option>
+                <option value="3">Categoria</option>
+              </select>
+        <button id="ButtonBtn" class="btn btn-outline-secondary" type="button">Button</button>
+        </div>
+      </div>
+    
+    <!--INICIO DO SOBRE-->
+
+    <section class="main" id="servico">
+   
+        <center>
+                 <div class="container mt-3">
+                    <table class="table table-dark">
+                        <thead>
+                            <label id="teste"></label>
+                            <th>ID do Produto</th>
+                            <th>imagem</th>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Tipo</th>
+                            <th>Estoque</th>
+                            <th>Quantidade</th>
+                            <th>Valor</th>
+                            <th>Controle</th>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div><br>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Controle</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <label for="nome" class="label_imput" id="labs">Nome:</label>
+            <input placeholder="Digite o Nome do produto" type="text" name="nome" id="nomeS"><br>
+            <label for="tipo" class="label_input" id="labs">TIPO</label>
+            <select name="tipo" id="tipoS">
+                <option value=" "> </option>
+                <option value="filme">FILME</option>
+                <option value="anime">ANIME</option>
+                <option value="livro">LIVRO</option>
+                <option value="customizado">CUSTOMIZADO</option>
+                <option value="animal">ANIMAL</option>
+                </select><br>
+                <label for="categoria" class="label_input" id="labs">CATEGORIA</label>
+                <select name="categoria" id="categoriaS">
+                    <option value=" "> </option>
+                    <option value="funko pop">FUNKO POP</option>
+                    <option value="chibi">CHIBI</option>
+                    <option value="figure">FIGURE</option>
+                </select><br>
+                <label for="estoque" class="label_input" id="labs">ESTOQUE</label>
+                <select name="estoque" id="estoqueS">
+                    <option value=" "> </option>
+                    <option value="disponivel">DISPONIVEL</option>
+                    <option value="não disponivel">NÃO DISPONIVEL</option>
+                </select><br>
+                <label for="qtd" class="label_imput" id="labs">Quantidade:</label>
+                <input placeholder="Digite a Quantidade" type="number" name="qtd" id="qtdS"><br>
+                <label for="valor" class="label_imput" id="labs">Valor:</label>
+                <input placeholder="Digite o valor" type="number" name="valor" id="valorS"><br>
+        </div>
+        <div class="modal-footer">
+          <button id="btn_alt" type="button" class="btn btn-success" onclick="alterData()">Alterar</button>
+          <button id="btn_del" type="button" class="btn btn-danger" onclick="deleteData()">Deletar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+            </fieldset>
+ </center>
+    </section>
+</div>
+
+   
+
+    <!--FIM DO SOBRE-->
+
+    
+     <!-- RODAPÉ -->
+     <footer id="contato">
+        <div class="info">
+            <div class="endereco">
+                <div class="titulo"><h3>Endereço</h3></div>
+                <div class="text"><p> Rua Allan Kardec Terra Nova </p></div>
+            </div>
+            <div class="telefone">
+                <div class="titulo"><h3>Telefone</h3></div>
+                <div class="text"><p> (12) 98118-1415 </p></div>
+            </div>
+            <div class="email">
+                <div class="titulo"><h3>Email</h3></div>
+                <div class="text"><p> mariocabral.a@gmail.com </p></div>
+            </div>
+                <img class="logo_rodape1" src="logo.png"></div>
+        </div>
+        
+      
+    
+     </footer> 
+     <!-- FIM DO RODAPÉ -->
+     <!--SCRIPTS-->
+     <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+        import { getStorage } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js";
+        
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBe5761M3mZJtSSkEYQMl6xMlKqCG2a1kw",
+          authDomain: "gv-biscuit.firebaseapp.com",
+          databaseURL: "https://gv-biscuit-default-rtdb.firebaseio.com",
+          projectId: "gv-biscuit",
+          storageBucket: "gv-biscuit.appspot.com",
+          messagingSenderId: "780161544772",
+          appId: "1:780161544772:web:428cd08b6bd9c2b369c211",
+          measurementId: "G-FSEBBM90KP"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        import {ref as sRef,uploadBytesResumable, getDownloadURL} 
+        from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js";
+        import {getDatabase,ref,get,set,child,update,remove,onValue}
+        from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+
+
+        const firebaseApp = initializeApp(firebaseConfig);
+
+        const db = getDatabase();
+
+
+        var ID = 0;
+        var biscu = [];
+        var tbody = document.getElementById('tbody');
+
+        function AddItemTb(ID,Nome,Categoria,Tipo,Valor,Estque,Quantidade,ImageName,ImgUrl){
+            let trow = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td4 = document.createElement('td');
+            let td5 = document.createElement('td');
+            let td6 = document.createElement('td');
+            let td7 = document.createElement('td');
+            let td8 = document.createElement('td');
+            let td9 = document.createElement('td');
+            console.log(ImageName);
+            biscu.push([Nome,Categoria,Tipo,Valor,Estque,Quantidade]);
+            td1.innerHTML=+ID;
+            td2.innerHTML='<img src="'+ImageName+'" id="myimg">';
+            td4.innerHTML=Nome;
+            td5.innerHTML=Categoria;
+            td6.innerHTML=Tipo;
+            td7.innerHTML=Valor;
+            td8.innerHTML=Estque;
+            td9.innerHTML=Quantidade;
+            td2.classList+="img";
+            td4.classList+="nome";
+            td5.classList+="categoria";
+            td6.classList+="tipo";
+            td7.classList+="valor";
+            td8.classList+="estque";
+            td9.classList+="quantidade";
+            trow.appendChild(td1);
+            trow.appendChild(td2);
+            trow.appendChild(td4);
+            trow.appendChild(td5);
+            trow.appendChild(td6);
+            trow.appendChild(td7);
+            trow.appendChild(td8);
+            trow.appendChild(td9);
+            var Controle = document.createElement('div');
+            //var y = FillTboxes(ID);
+            Controle.innerHTML = '<button type="button" class="btn btn-primary my-2" data-toggle="modal" data-target="#exampleModalCenter">Gerenciar</button>'
+            trow.appendChild(Controle);
+            tbody.appendChild(trow);
+        }
+        
+        function GetAllDataRT(){
+
+            const dbRef = ref(db,"GVBiscuit");
+            onValue(dbRef,(snapshot)=>{
+            var biscuit = [];
+            snapshot.forEach(childSnapshot =>{
+            biscuit.push(childSnapshot.val());
+            });
+            AddAll(biscuit);
+            });
+
+        }
+
+            window.onload = GetAllDataRT;
+
+        function AddAll(GVBiscuit){
+            tbody.innerHTML="";
+            GVBiscuit.forEach(element => {
+                AddItemTb(element.ID,element.Nome,element.Categoria,element.Tipo,element.Estque,element.Quantidade,element.Valor,element.ImgUrl,element.ImageName);
+            });
+        }
+
+        function FillTboxes(index){
+            
+            --index;
+            nomeS.value = biscu[index][0];
+            tipoS.value = biscu[index][2];
+            categoriaS.value = biscu[index][1];
+            estoqueS.value = biscu[index][3];
+            qtdS.value = biscu[index][4];
+            valorS.value = biscu[index][5];
+    
+        }
+
+        var searchbar = document.getElementById("SearchBar");
+        var searcbtn = document.getElementById("SearchBtn");
+        var category = document.getElementById("Categoria");
+
+        //variavel imagem
+        var files = [];
+        var reader = new FileReader;
+
+        var namebox = document.getElementById("namebox");
+        var extlab = document.getElementById("extlab");
+        var myimg = document.getElementById("myimg");
+        var proglab = document.getElementById("upprogress");
+        var selbtn = document.getElementById("selbtn");
+        var envbtn = document.getElementById("envbtn");
+
+        var input = document.createElement('input');
+        input.type='file';
+
+        input.onchange = e =>{
+            files = e.target.files;
+
+            var extention = GetFileExt(files[0]);
+            var name = GetFileName(files[0]);
+
+            namebox.value=name;
+            extlab.innerHTML = extention;
+
+            reader.readAsDataURL(files[0]);
+        }
+
+        reader.onload = function(){
+            myimg.src=reader.result;
+        }
+
+        selbtn.onclick = function(){
+            input.click();
+        }
+
+        function GetFileExt(file){
+            var temp = file.name.split('.');
+            var ext = temp.slice((temp.length-1),(temp.length));
+            return '.'+ext[0];
+        }
+        function GetFileName(file){
+            var temp = file.name.split('.');
+            var fname = temp.slice(0,-1).join('.');
+            return fname;
+        }
+
+        async function UploadProgress(){
+            var imgToUpload = files[0];
+
+            var imgName = namebox.value + extlab.innerHTML;
+
+            const metaData = {
+                contentType: imgToUpload.type
+            }
+
+            const storage = getStorage();
+
+            const storageRef = sRef(storage,"biscuit/"+imgName);
+
+            const UploadTask = uploadBytesResumable(storageRef,imgToUpload,metaData);
+
+            UploadTask.on('state-changed',(snapshot)=>{
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
+                proglab.innerHTML = "Upload"+progress+"%";
+            },
+            (error)=>{
+                alert("Error:Não foi");
+            },()=>{
+                getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>{
+                    insertData(downloadURL);
+                    location.reload();
+                });
+            });
+        }
+//fim da imagem
+
+        //variavel para insert
+        var valor = document.getElementById("valor");
+        var tipo = document.getElementById("tipo");
+        var categoria = document.getElementById("categoria");
+        var qtd = document.getElementById("qtd");
+        var estoque = document.getElementById("estoque");
+        var imagem = document.getElementById("imagem");
+        var id = document.getElementById("id");
+        var nome = document.getElementById("nome");
+
+        //variavel para select
+        var valorS = document.getElementById("valorS");
+        var tipoS = document.getElementById("tipoS");
+        var categoriaS = document.getElementById("categoriaS");
+        var qtdS = document.getElementById("qtdS");
+        var estoqueS = document.getElementById("estoqueS");
+        var imagemS = document.getElementById("imagemS");
+        var idB = document.getElementById("txtBusca");
+        var idS = document.getElementById("idS");
+        var nomeS = document.getElementById("nomeS");
+
+        //variavel dos botões
+        var btn_send = document.getElementById("btn");
+        var btn_del = document.getElementById("btn_del");
+        var btn_alt = document.getElementById("btn_alt");
+
+        //função do insert
+        function insertData(URL){
+            var name = namebox.value;
+            var ext = extlab.innerHTML;
+            set(ref(db,"GVBiscuit/"+ id.value),{
+                ID:id.value,
+                Nome:nome.value,
+                Tipo: tipo.value,
+                Categoria: categoria.value,
+                Quantidade: qtd.value,
+                Estque: estoque.value,
+                Valor: valor.value,
+                ImageName: (name+ext),
+                ImgUrl: URL
+            })
+            .then(()=>{
+                UploadProgress();
+                alert("FOI");
+            })
+            .catch((error)=>{
+                alert("NÃO FOI");
+            });
+                
+        }
+
+        //função do select
+        function selectData(){
+            const dbref = ref(db);
+            get(child(dbref,"GVBiscuit/"+ idB.value)).then((snapshot)=>{
+                if(snapshot.exists()){
+                    valorS.value = snapshot.val().Valor;
+                    idS.value = snapshot.val().ID;
+                    nomeS.value = snapshot.val().Nome;
+                    tipoS.value = snapshot.val().Tipo;
+                    categoriaS.value = snapshot.val().Categoria;
+                    estoqueS.value = snapshot.val().Estque;
+                    qtdS.value = snapshot.val().Quantidade;
+                }else{
+                    alert("Nada encontrado");
+                }
+            })
+            .catch((error)=>{
+                alert("Não foi, error"+error);
+            });
+        }
+
+        //função do update
+        function alterData(){
+            update(ref(db,"GVBiscuit/"+ idB.value),{
+                Nome:nomeS.value,
+                Tipo: tipoS.value,
+                Categoria: categoriaS.value,
+                Quantidade: qtdS.value,
+                Estque: estoqueS.value,
+                Valor: valorS.value
+            })
+            .then(()=>{
+                alert("FOI");
+            })
+            .catch((error)=>{
+                alert("NÃO FOI");
+            });
+        }
+
+        //função do delete
+        function deleteData(){
+            remove(ref(db,"GVBiscuit/"+ idB.value),{
+            })
+            .then(()=>{
+                alert("FOI");
+            })
+            .catch((error)=>{
+                alert("NÃO FOI");
+            });
+        }
+
+
+        btn_send.addEventListener('click',insertData);
+        btn_alt.addEventListener('click',selectData);
+        btn_del.addEventListener('click',selectData);
+      </script>
+      
+    <script src="script..js"> </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

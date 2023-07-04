@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="pag_ini.css"/>
+</head>
+<body>
+    <!--AQUI ESTÁ TODO O CONTEÚDO DO SITE-->
+    <section>
+        <!--AQUI ESTÁ AS DUAS FOTOS E OS DOIS FORMULÁRIOS-->
+        <div class="container">
+            <!--AQUI ESTÁ O FORMULÁRIO DE LOGIN-->
+            <div class="usuario login">
+                <!--AQUI ESTÁ A IMAGEM DO FORMULÁRIO DE LOGIN-->
+                <div class="imgBx">
+                    <img src="https://www.jornalcontabil.com.br/wp-content/uploads/2020/05/tecnologia-financeira-com-design-de-ilustracao-de-icone-de-desktop_24908-62516.jpg" alt="Login">
+                </div>
+                <!--AQUI ESTÁ OS INPUTS DO FORMULÁRIO DE LOGIN-->
+                <div class="formulario">
+                    <h2>Login</h2>
+                    <input type="text" placeholder="Nome"/>
+                    <input type="password" placeholder="Senha"/>
+                    <input type="submit" value="entrar"/>
+                    <!--AQUI ESTÁ A PERGUNTA QUE CHAMA A FUNÇÃO MUDANCA-->
+                    <p class="signup">Não tem conta? <a href="#" onclick="mudanca();">Cadastre-se.</a></p>
+                </div>
+            </div>
+            <!--AQUI ESTÁ O FORMULÁRIO DE CADASTRO-->
+            <div class="usuario cadastro">
+                
+                <div class="formulario">
+                    <!--AQUI ESTÁ OS INPUTS DO FORMULÁRIO DE CADASTRO-->
+                    <h2>Crie sua conta</h2>
+                    <input type="text" placeholder="Nome completo"/>
+                    <input type="text" placeholder="Usuário"/>
+                    <input type="text" placeholder="E-mail"/>
+                    <input type="password" placeholder="Crie sua Senha"/>
+                    <input type="password" placeholder="Digite a senha novamente"/>
+                    <input type="submit" value="Cadastrar"/>
+                    <!--AQUI ESTÁ A PERGUNTA QUE CHAMA A FUNÇÃO MUDANCA-->
+                    <p class="signup">Quer entrar no site? <a href="#" onclick="mudanca();">Entre.</a></p>
+                </div>
+                <!--AQUI ESTÁ A IMAGEM DO FORMULÁRIO DE CADASTRO-->
+                <div class="imgBx">
+                    <img src="https://assets.blu365.com.br/uploads/sites/4/2019/09/planejamento-financeiro-semanal.jpg" alt="Cadastro">
+                </div>
+            </div>
+            
+        </div>    
+    </section>
+    <script>
+        function mudanca()
+        {
+            document.querySelector('.container').classList.toggle('active'); //seleciona a class e adiciona um boolenao(toogle), com isso, se a class não obter o active ele adiciona, se obter ele remove.
+        }
+    </script>
+</body>
+</html>

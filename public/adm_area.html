@@ -1,0 +1,365 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="registro" style="display:contents;">
+            <div class="content">
+        
+                <!--TEXTO DA HOME-->  
+        
+                <center>
+                    <fieldset>
+                        <br><br><div class="inicio">
+                            <center><h1>Enviar Certificado</h1></center>
+                         </div><br>
+                         <table>
+                            <tr>
+                                <td><label for="nome_do_curso" class="label_imput">Nome do curso:</label></td>
+                                <td><label for="instituicao" class="label_input">Instituição:</label></td>
+                                <td><label for="nivel" class="label_input">Nivel:</label></td>
+                                <td><label for="mes_conclusao" class="label_input">Mês da Conclusão:</label></td>
+                                <td><label for="ano_conclusao" class="label_input">Ano da Conclusão:</label></td>
+                            </tr>
+                            <tr>
+                                <td><input placeholder="Digite o Nome do curso" type="text" name="nome" id="nome_curso"></td>
+                                <td> 
+                                    <input placeholder="Digite o Nome da Instituição" type="text" name="nome" id="nome_inst">
+                                </td>
+                                <td>
+                                    <select name="nivel" id="nivel">
+                                        <option value=" "> </option>
+                                        <option value="Técnico">Técnico</option>
+                                        <option value="Complementar">Complementar</option>
+                                        <option value="Bacharelado">Bacharelado</option>
+                                        </select>
+                                </td>
+                                <td>
+                                    <input placeholder="Mês" type="text" name="mes_conclusao" id="mes_conclusao">
+                                </td>
+                                <td>
+                                 <input placeholder="Ano" type="text" name="ano_conclusao" id="ano_conclusao">
+                                </td>
+                            </tr>
+                        </table>
+                        </div><br>
+                        <!--inicio do envio da imagem do certificado-->
+                        <fieldset>
+                        <div class="input"><br>
+                            <label>Certificado</label> <input type="text" id="namebox"><label id="extlab"></label><br><br>
+                            <img id="myimg" style="display: none;"> <label id="upprogress"></label>
+                        </div><br>
+                        <ul class="menu">
+                            <li><button id="selbtn">Selecionar Arquivo</button></li>
+                        </ul>
+                    </fieldset>
+                </fieldset>
+                    </fieldset>
+                    <br><center><button id="btn">Enviar</button></center><br>
+         </center>
+
+         <center>
+            <fieldset>
+                <br><br><div class="inicio">
+                    <center><h1>Enviar Projeto</h1></center>
+                 </div><br>
+                 <table>
+                    <tr>
+                        <td><label for="nome_do_projeto" class="label_imput">Nome do projeto:</label></td>
+                        <td><label for="tecnologia" class="label_input">Tecnologia:</label></td>
+                        <td><label for="descricao" class="label_input">Descrição:</label></td>
+                        <td><label for="link_projeto" class="label_input">Link do Projeto:</label></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="Digite o Nome do projeto" type="text" name="nome_do_projeto" id="nome_do_projeto"></td>
+                        <td> 
+                            <input placeholder="Digite as tecnologias" type="text" name="tecnologia" id="tecnologia">
+                        </td>
+                        <td>
+                            <input placeholder="Descrição" type="text" name="descricao" id="descricao">
+                        </td>
+                        <td>
+                            <input placeholder="Link do Projeto" type="text" name="link_projeto" id="link_projeto">
+                        </td>
+                    </tr>
+                </table>
+                </div><br>
+        </fieldset>
+            </fieldset>
+            <br><center><button id="btn_proj">Enviar</button></center>
+        </center>
+         <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+            import { getStorage } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js";
+            
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+            apiKey: "AIzaSyAfqk9-xP3hh5jeVnGQPQU_LockwANM_nY",
+            authDomain: "portifolio-9c302.firebaseapp.com",
+            projectId: "portifolio-9c302",
+            storageBucket: "portifolio-9c302.appspot.com",
+            messagingSenderId: "104782257544",
+            appId: "1:104782257544:web:19e16cd1bbad676fc6ee3d",
+            measurementId: "G-Y9Z28Z6WR4",
+            databaseURL: "https://portifolio-9c302-default-rtdb.firebaseio.com/"
+        };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            import {ref as sRef,uploadBytesResumable, getDownloadURL} 
+            from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js";
+            import {getDatabase,ref,get,set,child,update,remove,onValue}
+            from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+    
+    
+            const firebaseApp = initializeApp(firebaseConfig);
+            const URL = "https://portifolio-9c302-default-rtdb.firebaseio.com/";
+            const db = getDatabase();
+    
+            var hojeID = new Date();
+            var diaID =  hojeID.getDay();
+            var mesID = hojeID.getMonth();
+            var anoID = hojeID.getFullYear();
+            var horaID = hojeID.getHours();
+            var minutoID = hojeID.getMinutes();
+            var segundoID = hojeID.getSeconds();
+            var IDcerti = diaID + mesID + anoID + horaID + minutoID + segundoID;
+    
+            //variavel imagem
+            var files = [];
+            var reader = new FileReader;
+
+            var filesPDF = [];
+            var readerPDF = new FileReader;
+
+            var namebox = document.getElementById("namebox");
+            var extlab = document.getElementById("extlab");
+            var myimg = document.getElementById("myimg");
+            var proglab = document.getElementById("upprogress");
+            var selbtn = document.getElementById("selbtn");
+            var envbtn = document.getElementById("envbtn");
+    
+            var input = document.createElement('input');
+            input.type='file';
+    
+            input.onchange = e =>{
+                files = e.target.files;
+                console.log(files);
+                var extention = GetFileExt(files[0]);
+                var name = GetFileName(files[0]);
+    
+                namebox.value=name;
+                extlab.innerHTML = extention;
+    
+                reader.readAsDataURL(files[0]);
+            }
+    
+            reader.onload = function(){
+                myimg.src=reader.result;
+            }
+    
+            selbtn.onclick = function(){
+                input.click();
+            }
+    
+            function GetFileExt(file){
+                var temp = file.name.split('.');
+                var ext = temp.slice((temp.length-1),(temp.length));
+                return '.'+ext[0];
+            }
+            function GetFileName(file){
+                var temp = file.name.split('.');
+                var fname = temp.slice(0,-1).join('.');
+                return fname;
+            }
+
+    
+            async function UploadProgress(){
+                var imgToUpload = files[0];
+
+                var imgName = namebox.value + extlab.innerHTML;
+    
+                const metaData = {
+                    contentType: imgToUpload.type,
+                }
+    
+                const storage = getStorage();
+    
+                const storageRef = sRef(storage,"portifolio/certificado/"+imgName);
+
+    
+                const UploadTask = uploadBytesResumable(storageRef,imgToUpload,metaData);
+    
+                UploadTask.on('state-changed',(snapshot)=>{
+                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
+                    proglab.innerHTML = "Upload"+progress+"%";
+                   /* if(progress == 100)
+                    {
+                        window.location.reload(true);
+                    }*/
+                },
+                
+                (error)=>{
+                    alert("Error:Não foi");
+                },()=>{
+                    getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>{
+                    console.log(downloadURL);
+                        insertDataCert(downloadURL);
+                    window.location.reload();
+                    });
+                });
+            }
+    //fim da imagem
+    
+            //variavel para insert certificado
+            var curso = document.getElementById("nome_curso");
+            var inst = document.getElementById("nome_inst");
+            var nivel = document.getElementById("nivel");
+            var mes = document.getElementById("mes_conclusao");
+            var ano = document.getElementById("ano_conclusao");
+
+            //variavel para insert projeto
+            var projeto = document.getElementById("nome_do_projeto");
+            var tecnologia = document.getElementById("tecnologia");
+            var descricao = document.getElementById("descricao");
+            var link_projeto = document.getElementById("link_projeto");
+    
+            /*variavel para select
+            var valorS = document.getElementById("valorS");
+            var tipoS = document.getElementById("tipoS");
+            var categoriaS = document.getElementById("categoriaS");
+            var qtdS = document.getElementById("qtdS");
+            var estoqueS = document.getElementById("estoqueS");
+            var imagemS = document.getElementById("imagemS");
+            var idB = document.getElementById("txtBusca");
+            var idS = document.getElementById("idS");
+            var nomeS = document.getElementById("nomeS");*/
+    
+            //variavel dos botões
+            var btn_send = document.getElementById("btn");
+            var btn_send_proj = document.getElementById("btn_proj");
+            //var btn_del = document.getElementById("btn_del");
+            //var btn_alt = document.getElementById("btn_alt");
+    
+            //função do insert certificado
+            function insertDataCert(URL){
+                var name = namebox.value;
+                var ext = extlab.innerHTML;
+                set(ref(db,"portiflio/certificado/" + IDcerti),{
+                    Curso:curso.value,
+                    inst: inst.value,
+                    Nivel: nivel.value,
+                    Mes: mes.value,
+                    ano: ano.value,
+                    ImageName: (name+ext),
+                    ArquivoURL: URL,
+                    ImgURL: "https://firebasestorage.googleapis.com/v0/b/portifolio-9c302.appspot.com/o/portifolio%2Fcertificado%2FCertificados.png?alt=media&token=6cf53df1-127e-4631-baf1-70ccac1d7f1e"
+                })
+                .then(()=>{
+                    UploadProgress();
+                    alert("FOI");
+                })
+                .catch((error)=>{
+                    window.location.reload(true);
+                    alert("NÃO FOI");
+                });
+                    
+            }
+
+            function insertDataProj(){
+                set(ref(db,"portiflio/projeto/" + IDcerti),{
+                    Projeto:projeto.value,
+                    tecnologia: tecnologia.value,
+                    descricao: descricao.value,
+                    link_projeto: link_projeto.value,
+                    ImgURL: "https://firebasestorage.googleapis.com/v0/b/portifolio-9c302.appspot.com/o/portifolio%2Fcertificado%2Femblem-gtksv-orange-01.png?alt=media&token=96ca73ff-28e3-45ab-8bd4-4faab9c86008"
+                })
+                .then(()=>{
+                    UploadProgress();
+                    alert("FOI");
+                    window.location.reload(true);
+                })
+                .catch((error)=>{
+                    window.location.reload(true);
+                    alert("NÃO FOI");
+                });
+                    
+            }
+    
+            /*função do select
+            function selectData(){
+                const dbref = ref(db);
+                get(child(dbref,"GVBiscuit/"+ idB.value)).then((snapshot)=>{
+                    if(snapshot.exists()){
+                        valorS.value = snapshot.val().Valor;
+                        idS.value = snapshot.val().ID;
+                        nomeS.value = snapshot.val().Nome;
+                        tipoS.value = snapshot.val().Tipo;
+                        categoriaS.value = snapshot.val().Categoria;
+                        estoqueS.value = snapshot.val().Estque;
+                        qtdS.value = snapshot.val().Quantidade;
+                    }else{
+                        alert("Nada encontrado");
+                    }
+                })
+                .catch((error)=>{
+                    alert("Não foi, error"+error);
+                });
+            }
+    
+            //função do update
+            function alterData(){
+                update(ref(db,"GVBiscuit/"+ idB.value),{
+                    Nome:nomeS.value,
+                    Tipo: tipoS.value,
+                    Categoria: categoriaS.value,
+                    Quantidade: qtdS.value,
+                    Estque: estoqueS.value,
+                    Valor: valorS.value
+                })
+                .then(()=>{
+                    alert("FOI");
+                })
+                .catch((error)=>{
+                    alert("NÃO FOI");
+                });
+            }
+    
+            //função do delete
+            function deleteData(){
+                remove(ref(db,"GVBiscuit/"+ idB.value),{
+                })
+                .then(()=>{
+                    alert("FOI");
+                })
+                .catch((error)=>{
+                    alert("NÃO FOI");
+                });
+            }*/
+    
+    
+            btn_send.addEventListener('click',insertDataCert);
+            btn_send_proj.addEventListener('click',insertDataProj);
+            //btn_alt.addEventListener('click',selectData);
+            //btn_del.addEventListener('click',selectData);
+
+
+
+          </script>
+          
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> 
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+    </body>
+</html>
