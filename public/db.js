@@ -17,7 +17,6 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase
         from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
         const firebaseApp = initializeApp(firebaseConfig);
-        const URL = "https://portifolio-9c302-default-rtdb.firebaseio.com/";
         const db = getDatabase();
         
         var ID = 1;
