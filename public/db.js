@@ -8,7 +8,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-            //aqui você faz a conexão
+            //aqui você faz a conexão com o banco
         };
 
         const app = initializeApp(firebaseConfig);
