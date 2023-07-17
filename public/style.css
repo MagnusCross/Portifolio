@@ -33,76 +33,6 @@ body{
 }
 
 
-.carousel-item {
-	height: 100vh;
-	min-height: 300px;
-}
-
-.carousel-caption {
-	bottom: 220px;
-}
-.carousel-caption h5 {
-	font-size: 45px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	margin-top: 25px;
-	font-family: poppins;
-}
-.carousel-caption p {
-	width: 60%;
-	margin: auto;
-	font-size: 18px;
-	line-height: 1.9;
-	font-family: poppins;
-}
-.carousel-caption a {
-	text-transform: uppercase;
-	background: #262626;
-	padding: 10px 30px;
-	display: inline-block;
-	color: rgb(0, 0, 0);
-	margin-top: 15px;
-}
-.navbar-nav a {
-	font-family: poppins;
-	font-size: 18px;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-.navbar-light .navbar-brand {
-	color: #000000;
-	font-size: 25px;
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 2px;
-}
-.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-	color: #000000;
-}
-.navbar-light .navbar-nav .nav-link {
-	color: #000000;
-}
-.navbar-nav {
-	text-align: center;
-}
-.nav-link {
-	padding: .2rem 1rem;
-}
-.nav-link.active, .nav-link:focus {
-	color: rgb(0, 0, 0);
-}
-.navbar-toggler {
-	padding: 1px 5px;
-	font-size: 18px;
-	line-height: 0.3;
-	background: rgb(0, 0, 0);
-}
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-	color: rgb(0, 0, 0);
-}
-.w-100 {
-	height: 100vh;
-}
 @media only screen and (max-width: 767px) {
 	.navbar-nav.ml-auto {
 		background: rgba(0, 0, 0, 0.5);
@@ -124,19 +54,6 @@ body{
     align-items: center;
     flex-direction: column;
     padding: 30px 120px;
-    
-}
-.container{
-    margin-right: 60px;
-    display:grid;
-    grid-template-columns:235px 235px 235px 235px 235px;
-    grid-template-rows: 450px 450px;
-}
-
-
-.main2{
-    color:#FFA500;
-    
 }
 
 
@@ -155,6 +72,7 @@ header
     z-index: 1000;
     box-shadow: #000000 5px 5px 5px 5px;
 }
+
         /*ESSA É A IMAGEM DO LOGO*/
         .logo
         {
@@ -170,6 +88,7 @@ header
         .menu li
         {
             list-style: none;
+            color: #000000;
         }
         /*AQUI MODIFICAMOS DIRETAMENTE OS ITENS DO MENU*/
         .menu li a
@@ -182,7 +101,7 @@ header
         /*AQUI MODIFICAMOS COMO O ITEM DO MENU FICA APÓS O MOUSE PASSAR SOBRE ELE*/
         .menu li a:hover
         {
-            color: #000000;
+            color:white;
         }
         /*inicio das checkbox*/
         .option
@@ -196,23 +115,12 @@ header
         .option li input
         {
             position: relative;
-            color: #fff;
+            color: black;
             text-decoration: none;
             margin-left: 40px;
         }
         /*buscar*/
           
-          #txtBusca{
-            float:left;
-            background-color:white;
-            padding-left:5px;
-            font-style:italic;
-            font-size:18px;
-            border-radius: 20px;
-            height:32px;
-            width:260px;
-          }
-
 /*AQUI FICA A HOME*/
 .content
 {
@@ -260,49 +168,7 @@ header
             line-height: 1.5em;
             margin: 20px 0;
         } 
-    /*AQUI FICA O BOTÃO DE ENTRAR*/
-    .btn
-    {
-        position: relative;
-        display: inline-block;
-        padding: 20px 50px;
-        background-color: #f5c116;
-        color: #333;
-        font-size: 1.1em;
-        font-weight: 500;
-        border-radius: 40px;
-        text-decoration: none;
-        transition: 0.25s;
-        margin-top: 20px;
-    }
-        /*AQUI FICA O BOTÃO DE ENTRAR TENDO O MOUSE SOBRE ELE*/ 
-        .btn:hover
-        {
-            letter-spacing: 2px;
-        }
-    /*AQUI DEFINE O LOCAL ONDE OCORRE O CARROSEL*/
-    .carrosel
-    {
-    position: relative;
     
-    }
-        /*AQUI FICA AS FOTOS DO CARROSEL QUANDO NÃO ESTÃO APARECENDO*/
-        .carrosel .slides
-        {
-            display: none;
-        }
-        /*AQUI FICA O BOTÃO QUANDO A FOTO ESTÁ APARECENDO*/
-        .carrosel .slides.active
-        {
-            display: block;
-            transition: all ease 0.3s;
-        }
-        /*AQUI DEFINE O TAMANHO NORMAL E MÁXIMO DAS FOTOS DO CARROSEL*/
-        .carrosel .slides img
-        {
-            max-width: 200px;
-            max-height: 200px;
-        }
 /*FAZENDO O RESPONSIVO*/
 @media(max-width:991px)
 {
@@ -331,15 +197,6 @@ header
     {
         font-size: 40px;
     }
-    .carrosel
-    {
-        margin-top: 40px;
-    }
-    .carrosel .slides img
-    {
-        width: 100%;
-        max-width: 420px;
-    }
     .menu
     {
         display: none;
@@ -351,7 +208,7 @@ header
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(#1f241f, #282828);
+        background: radial-gradient(#FFA500, #FFA500);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -387,7 +244,7 @@ header
         height: 2px;
         background-color: rgb(0, 0, 0);
         transform: translateY(-10px);
-        box-shadow: 0 10px 0 white;
+        box-shadow: 0 10px 0 black;
         transition: 0.25s;
     }
     .toggle.active::before
@@ -401,7 +258,7 @@ header
         position: absolute;
         width: 100%;
         height: 2px;
-        background-color: #fff;
+        background-color: #000000;
         transform: translateY(10px);
         transition: 0.25s;
     }
@@ -411,11 +268,24 @@ header
     }
 }
 @media(max-width:480px)
-{
-    header, 
+{ 
+    body
+    {
+        zoom: 84% ;
+        width: fit-content;
+    }
     .main
     {
         padding: 20px;
+        width:fit-content;
+    }
+    label
+    {
+        font-size: 20px;
+    }
+    .textoequipe
+    {
+        width:max-content;
     }
     .toggle.active 
     {
@@ -429,6 +299,7 @@ header
     {
         padding:15px 30px ;
     }
+    
 }
 /*INICIO DO SOBRE*/
 
@@ -438,144 +309,43 @@ header
 }
 
 .textoequipe{
+    width: 100%;
     text-align: center;
     background: #FFA500;
     color: black;
+    padding-top: 2%;
+    
 }
 
-.textoequipe1{
-    text-align: center;
-    background: #1f241f;
-    color: white;
+.certificado{
+    width:auto;
 }
 
-.cert{
-    min-width: 200px;
-    max-width: 800px;
+.container{
+    margin-right: 60px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: stretch;
+    justify-items: center;
 }
+
+
 
 
 /*FIM DO SOBRE*/
 
-
-/*AQUI FICA TODA A ÁREA DO SERVIÇO*/
-#equipe
-{
-    background-color: #333;
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    flex-direction: row;
-}
-  /*AQUI FICA O CARD*/
-    .box
-    {
-        position: relative;
-        width: 300px;
-        height: 400px;
-        background: white;
-        margin: 20px;
-        margin-right: 23.85px;
-        margin-left: 23.75px;
-        padding-right: 20%;
-        padding-left: 20%;
-        box-shadow: 0 30px 30ox rgba(0, 0, 0,  .5);
-    }
-            /*AQUI FICA ONDE APARECE A IMAGEM DO CARD E COMO ELA OCUPA O ESPAÇO*/
-            .box .imgBx
-            {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%; 
-            }
-            /*AQUI FICA A IMAGEM DO CARD*/
-            .box .imgBx img{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: 0.5s;
-            }
-            /*AQUI FICA A IMAGEM DO CARD QUANDO O MOUSE ESTÁ SOBRE ELA*/
-            .box:hover .imgBx img
-            {
-                opacity: 0;
-            }
-            /*AQUI FICA O TEXTO DO CARD E COMO EL OCUPA A TELA*/
-            .box .content{
-                position: absolute;
-                display: flex;
-                bottom: 20px;
-                left: 10%;
-                width: 80%;
-                height: 60px;
-                background-color: #f5c116;
-                transition: 0.5s;
-                overflow: hidden;
-                padding: 15px;
-                box-sizing: border-box;
-                flex-direction: column;
-                flex-wrap: nowrap;
-            }
-            /*AQUI FICA O TEXTO DO CARD E COMO EL OCUPA A TELA QUANDO O MOUSE ESTÁ SOBRE ELE*/
-            .box:hover .content{
-                width: 100%;
-                height: 100%;
-                bottom: 0;
-                left: 0;
-            }
-            /*AQUI FICA A FORMATAÇÃO DO TÍTULO TÍTULO DO CARD*/
-            .box .content h3{
-                margin: 0;
-                padding: 0;
-                font-size: 20px;
-            }
-            /*AQUI FICA A FORMATAÇÃO DOS PARÁGRAFOS TÍTULO DO CARD*/
-            .box .content p{
-                margin: 10px 0 0;
-                padding: 0;
-                opacity: 0;
-                line-height: 1.2em;
-                transition: 0.5s;
-                text-align: justify;
-            }
-            /*AQUI FICA A FORMATAÇÃO DOS PARÁGRAFOS TÍTULO DO CARD QUANDO O MOUSE ESTÁ SOBRE ELE*/
-            .box:hover .content p {
-                opacity: 1;
-                transition-delay: 0.5s;
-            }
-            /*AQUI FICA A FORMATAÇÃO DOS LINKS*/
-            .content p a:-webkit-any-link {
-                color:#ffffff;
-                cursor: pointer;
-                text-decoration: underline;
-            }
-/*FIM DO SERVIÇO*/
-
 #contato
 {
     background: #FFA500;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-   
 }
 #contato .info
 {
     margin-top: 20px;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     height: 30%;
-    width: 180px;
+    width:auto;
 }
 #contato .info .endereco, .telefone, .email, .logo_rodape1
 {
@@ -583,27 +353,4 @@ header
     padding-top: 20px;
     padding-left: 30%;
     padding-right: 30%;
-}
-
-#equipe
-{
-    background: radial-gradient(#1f241f, #282828);
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    flex-direction: column;
-}
-
-#contato .info .logo_rodape1{
-    margin-left: 120px;
-    max-width: 250px;
-    max-height: 250px;
-
-}
-.linha
-{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    flex-direction: row;
 }
